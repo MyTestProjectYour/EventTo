@@ -11,8 +11,8 @@ public class RunThread extends Thread {
 		eventToDeque = new LinkedBlockingDeque<EventToRun>();
 	}
 	/**
-	 * ÔÚ¶ÓÁĞ×îºóÃæÃæ¼ÓÈëÒ»¸öÖ´ĞĞ(eventToRun)Ö´ĞĞº¯Êı½Ó¿Ú
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
+	 * åœ¨é˜Ÿåˆ—æœ€åé¢é¢åŠ å…¥ä¸€ä¸ªæ‰§è¡Œ(eventToRun)æ‰§è¡Œå‡½æ•°æ¥å£
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
 	 */
 	public void push(EventToRun eventToRun) { 
 		eventToDeque.addLast(eventToRun);
@@ -23,8 +23,8 @@ public class RunThread extends Thread {
 		} 
 	}
 	/**
-	 * ÔÚ¶ÓÁĞ×îÇ°Ãæ¼ÓÈëÒ»¸öÖ´ĞĞ(eventToRun)Ö´ĞĞº¯Êı½Ó¿Ú
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
+	 * åœ¨é˜Ÿåˆ—æœ€å‰é¢åŠ å…¥ä¸€ä¸ªæ‰§è¡Œ(eventToRun)æ‰§è¡Œå‡½æ•°æ¥å£
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
 	 */
 	public void top(EventToRun eventToRun) {
 		eventToDeque.addFirst(eventToRun);
@@ -35,7 +35,7 @@ public class RunThread extends Thread {
 		} 
 	}
 	/**
-	 * ¹Ø±ÕÏß³Ì
+	 * å…³é—­çº¿ç¨‹
 	 */
 	public void closeThread() {
 		flag = false;
@@ -46,7 +46,7 @@ public class RunThread extends Thread {
 	@Override
 	public void run() {
 		while(flag) {
-			//ÍË³öÏß³Ì
+			//ï¿½Ë³ï¿½ï¿½ß³ï¿½
 			if(!flag) {
 				break;
 			}

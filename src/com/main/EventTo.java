@@ -10,7 +10,7 @@ public class EventTo {
 	private RunTimer runTimer = null;
 	private RunEvent runEvent = null;
 	/**
-	 * ÊµÀı»¯ÊÂ¼ş£¬×¢ÒâÕâÊÇµ¥ÁĞµÄ£¡
+	 * å®ä¾‹åŒ–äº‹ä»¶ï¼Œæ³¨æ„è¿™æ˜¯å•åˆ—çš„ï¼
 	 * @return EventTo this
 	 */
 	public static EventTo build() {
@@ -26,8 +26,8 @@ public class EventTo {
 		runEvent = new RunEvent();
 	}
 	/**
-	 * Ïò¶ÓÁĞµÄ×îºóÃæÌí¼ÓÒ»¸öÖ´ĞĞµÄÊÂ¼ş
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
+	 * å‘é˜Ÿåˆ—çš„æœ€åé¢æ·»åŠ ä¸€ä¸ªæ‰§è¡Œçš„äº‹ä»¶
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
 	 * @return EventTo this
 	 */
 	public EventTo pushEventTo(EventToRun eventToRun) {
@@ -37,8 +37,8 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Ïò¶ÓÁĞ×îÇ°ÃæÌí¼ÓÒ»¸öÖ´ĞĞÊÂ¼ş
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
+	 * å‘é˜Ÿåˆ—æœ€å‰é¢æ·»åŠ ä¸€ä¸ªæ‰§è¡Œäº‹ä»¶
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
 	 * @return EventTo this
 	 */
 	public EventTo topEventTo(EventToRun eventToRun) {
@@ -48,9 +48,9 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÒ»´ÎĞÔÖ´ĞĞÊÂ¼ş
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
-	 * @param delay ÑÓÊ±¶à¾ÃÖ´ĞĞ
+	 * æ·»åŠ ä¸€ä¸ªä¸€æ¬¡æ€§æ‰§è¡Œäº‹ä»¶
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
+	 * @param delay å»¶æ—¶å¤šä¹…æ‰§è¡Œ
 	 * @return EventTo this
 	 */
 	public EventTo newEventTo(EventToRun eventToRun,long delay) {
@@ -60,11 +60,11 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÖØ¸´ĞÔµÄÈÎÎñ
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
-	 * @param taskName ÈÎÎñÃû×Ö
-	 * @param delay ÑÓÊ±¶à¾ÃÖ´ĞĞ
-	 * @param period Ã¿¶àÉÙÃëÖ´ĞĞÒ»´Î
+	 * æ·»åŠ ä¸€ä¸ªé‡å¤æ€§çš„ä»»åŠ¡
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
+	 * @param taskName ä»»åŠ¡åå­—
+	 * @param delay å»¶æ—¶å¤šä¹…æ‰§è¡Œ
+	 * @param period æ¯å¤šå°‘ç§’æ‰§è¡Œä¸€æ¬¡
 	 * @return EventTo this
 	 */
 	public EventTo repeatEventTo(EventToRun eventToRun,String taskName,long delay, long period) {
@@ -74,8 +74,8 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * È¡ÏûÒ»¸öÖØ¸´ĞÔµÄÈÎÎñ 
-	 * @param taskName ÈÎÎñÃû×Ö
+	 * å–æ¶ˆä¸€ä¸ªé‡å¤æ€§çš„ä»»åŠ¡ 
+	 * @param taskName ä»»åŠ¡åå­—
 	 * @return EventTo this
 	 */
 	public EventTo cancelRepeatEventTo(String taskName) {
@@ -85,9 +85,9 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÊÂ¼ş
-	 * @param name ÊÂ¼şÃû×Ö
-	 * @param eventToRun Ö´ĞĞº¯Êı½Ó¿Ú
+	 * æ³¨å†Œä¸€ä¸ªäº‹ä»¶
+	 * @param name äº‹ä»¶åå­—
+	 * @param eventToRun æ‰§è¡Œå‡½æ•°æ¥å£
 	 * @return EventTo this
 	 */
 	public EventTo registerMessageEventTo(String name,EventToRun eventToRun) {
@@ -95,8 +95,8 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Í¬²½Ö´ĞĞÒ»¸öÊÂ¼ş,×¢ÒâÕâÀï»á×èÈûµ±Ç°µÄÖ´ĞĞÁ÷³Ì
-	 * @param name ÊÂ¼şÃû×Ö
+	 * åŒæ­¥æ‰§è¡Œä¸€ä¸ªäº‹ä»¶,æ³¨æ„è¿™é‡Œä¼šé˜»å¡å½“å‰çš„æ‰§è¡Œæµç¨‹
+	 * @param name äº‹ä»¶åå­—
 	 * @return EventTo this
 	 */
 	public EventTo syncSendMessageEventTo(String name) {
@@ -107,8 +107,8 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * Òì²½Ö´ĞĞÒ»¸öÊÂ¼ş
-	 * @param name ÊÂ¼şÃû×Ö
+	 * å¼‚æ­¥æ‰§è¡Œä¸€ä¸ªäº‹ä»¶
+	 * @param name äº‹ä»¶åå­—
 	 * @return EventTo this
 	 */
 	public EventTo asySendMessageEventTo(String name) {
@@ -119,8 +119,8 @@ public class EventTo {
 		return this;
 	}
 	/**
-	 * ÒÆ³ıÒ»¸öÊÂ¼ş 
-	 * @param name ÊÂ¼şÃû×Ö
+	 * ç§»é™¤ä¸€ä¸ªäº‹ä»¶ 
+	 * @param name äº‹ä»¶åå­—
 	 * @return EventTo this
 	 */
 	public EventTo removeMessageEventTo(String name) {
@@ -131,7 +131,7 @@ public class EventTo {
 	}
 	
 	/**
-	 * Ïú»ÙËùÓĞµÄÊı¾İºÍ×Ô¼º
+	 * é”€æ¯æ‰€æœ‰çš„æ•°æ®å’Œè‡ªå·±
 	 */
 	public void destroyEventTo() {
 		runThread.closeThread();

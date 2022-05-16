@@ -4,7 +4,7 @@ import java.util.Hashtable;
 import java.util.Map; 
 import com.interfaces.EventToRun;
 /**
- * Ö´ĞĞÊÂ¼şµÄÀà
+ * æ‰§è¡Œäº‹ä»¶çš„ç±»
  * @author test
  *
  */
@@ -14,28 +14,28 @@ public class RunEvent {
 		mapEvent = new Hashtable<String,EventToRun>();
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÊÂ¼ş
-	 * @param name ÊÂ¼şÃû×Ö
-	 * @param eventToRun Ö´ĞĞÊÂ¼şµÄ½Ó¿Ú
+	 * æ·»åŠ ä¸€ä¸ªäº‹ä»¶
+	 * @param name äº‹ä»¶åå­—
+	 * @param eventToRun æ‰§è¡Œäº‹ä»¶çš„æ¥å£
 	 */
 	public void addEvent(String name,EventToRun eventToRun) {
 		if(mapEvent.get(name)!=null) {
-			System.err.println("ÖØ¸´Ìí¼ÓÊÂ¼şÃû×Ö:"+name);
+			System.err.println("é‡å¤æ·»åŠ äº‹ä»¶åå­—:"+name);
 			return;
 		}
 		mapEvent.put(name, eventToRun);
 	}
 	/**
-	 * Í¨¹ıÃû×Ö£¬»ñÈ¡Ò»¸öÊÂ¼şµÄÖ´ĞĞcall
-	 * @param name ÊÂ¼şÃû×Ö
-	 * @return ·µ»Ø½Ó¿ÚEventToRun
+	 * é€šè¿‡åå­—ï¼Œè·å–ä¸€ä¸ªäº‹ä»¶çš„æ‰§è¡Œcall
+	 * @param name äº‹ä»¶åå­—
+	 * @return è¿”å›æ¥å£EventToRun
 	 */
 	public EventToRun getEvemt(String name) {
 		return mapEvent.get(name);
 	}
 	/**
-	 * ÒÆ³ıÒ»¸öÊÂ¼ş
-	 * @param name ÊÂ¼şÃû×Ö
+	 * ç§»é™¤ä¸€ä¸ªäº‹ä»¶
+	 * @param name äº‹ä»¶åå­—
 	 */
 	public void removelEvent(String name) {
 		if(mapEvent.get(name)!=null) {
@@ -43,7 +43,7 @@ public class RunEvent {
 		} 
 	}
 	/**
-	 * ¹Ø±ÕÊÂ¼ş
+	 * å…³é—­äº‹ä»¶
 	 */
 	public void closeEvent() {
 		mapEvent.clear();

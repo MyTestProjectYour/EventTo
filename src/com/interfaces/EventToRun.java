@@ -1,6 +1,6 @@
 package com.interfaces;
 /**
- * 事件接口
+ * 浜嬩欢鎺ュ彛
  * @author Test
  *
  */

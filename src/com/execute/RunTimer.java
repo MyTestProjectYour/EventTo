@@ -14,9 +14,9 @@ public class RunTimer {
 		mapTask = new HashMap<String, TimerTask>();
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÒ»´ÎĞÔÈÎÎñ
-	 * @param eventToRun Ö´ĞĞ½Ó¿Ú
-	 * @param delay ÑÓÊ±
+	 * æ·»åŠ ä¸€ä¸ªä¸€æ¬¡æ€§ä»»åŠ¡
+	 * @param eventToRun æ‰§è¡Œæ¥å£
+	 * @param delay å»¶æ—¶
 	 */
 	public void addOneExecute(EventToRun eventToRun,long delay) {
 		TimerTask task = new TimerTask() {
@@ -27,15 +27,15 @@ public class RunTimer {
 	    timer.schedule(task, delay); 
 	}
 	/**
-	 * Ìí¼ÓÒ»¸öÖØ¸´ĞÔÈÎÎñ
-	 * @param eventToRun Ö´ĞĞ½Ó¿Ú
-	 * @param taskName ÈÎÎñÃû×Ö
-	 * @param delay ÑÓÊ±
-	 * @param period ÖØ¸´¶àÉÙÊ±¼äÒ»´Î
+	 * æ·»åŠ ä¸€ä¸ªé‡å¤æ€§ä»»åŠ¡
+	 * @param eventToRun æ‰§è¡Œæ¥å£
+	 * @param taskName ä»»åŠ¡åå­—
+	 * @param delay å»¶æ—¶
+	 * @param period é‡å¤å¤šå°‘æ—¶é—´ä¸€æ¬¡
 	 */
 	public void addRepeatExecute(EventToRun eventToRun,String taskName,long delay, long period) {
 		if(mapTask.get(taskName) != null) {
-			System.err.println("Ìí¼ÓÖØ¸´ÈÎÎñÊ§°Ü£¬ÖØ¸´µÄÈÎÎñÃû×Ö:"+taskName);
+			System.err.println("æ·»åŠ é‡å¤ä»»åŠ¡å¤±è´¥ï¼Œé‡å¤çš„ä»»åŠ¡åå­—:"+taskName);
 			return;
 		}
 		TimerTask task = new TimerTask() {
@@ -47,8 +47,8 @@ public class RunTimer {
 	    mapTask.put(taskName, task);
 	}
 	/**
-	 * È¡ÏûÒ»¸öÖØ¸´ĞÔÈÎÎñ
-	 * @param taskName ÈÎÎñÃû×Ö
+	 * å–æ¶ˆä¸€ä¸ªé‡å¤æ€§ä»»åŠ¡
+	 * @param taskName ä»»åŠ¡åå­—
 	 */
 	public void cancelRepeatExecute(String taskName) {
 		if(mapTask.get(taskName) != null) {
@@ -57,10 +57,10 @@ public class RunTimer {
 		}
 	}
 	/**
-	 * ¹Ø±ÕÒ»¸ö¶¨Ê±Æ÷
+	 * å…³é—­ä¸€ä¸ªå®šæ—¶å™¨
 	 */
 	public void closeTimer() {
-		//È¡ÏûËùÓĞÈÎÎñ
+		//å–æ¶ˆæ‰€æœ‰ä»»åŠ¡
 		timer.cancel();
 	}
 }
