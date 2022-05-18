@@ -7,6 +7,7 @@ EventTo eventTo = EventTo.build();
 ```
 ## 你可以连续注册多个执行任务来处理你的事情，每个任务优先级不同
 ```
+//注册一个插入到队列最后面的任务
 eventTo.pushEventTo(new EventToRun() {  
    @Override  
    public void run() {  
@@ -16,11 +17,13 @@ eventTo.pushEventTo(new EventToRun() {
 ```
 ## 你也可以连续调用  
 ```
+//注册一个插入到队列最前面的任务
 eventTo.topEventTo(new EventToRun() {   
 	@Override
 	public void run() {  
 		System.out.println("测试2");  
 	}  
+//注册一个非队列的任务
 }).newEventTo(new EventToRun() {   
 	@Override  
 	public void run() {  
