@@ -83,3 +83,14 @@ eventTo.removeMessageEventTo("sendTest1");
 ```
 eventTo.destroyEventTo();
 ```
+2022.05.18
+## 你也可以通过名字创建多个新的实例化
+## You can also create multiple new instantiations by name
+```
+EventTo eventTo = EventTo.build("test");
+```
+## 你也可以通过名字销毁新建的EventTo.
+## You can also destroy the newly created EventTo by name.
+```
+EventTo.destroyEventTo("test");
+```
