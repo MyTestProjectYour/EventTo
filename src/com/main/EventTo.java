@@ -159,12 +159,12 @@ public class EventTo {
 	 * 销毁一个单列，通过名字
 	 * @param name
 	 */
-	public void destroyEventTo(String name) {
+	public static void destroyEventTo(String name) {
 		EventTo eventTo = build(name);
 		eventTo.runThread.closeThread();
 		eventTo.runTimer.closeTimer();
 		eventTo.runEvent.closeEvent();
 		mapEventTo.remove(name);
-		runEvent = null;
+		eventTo = null;
 	}
 }
