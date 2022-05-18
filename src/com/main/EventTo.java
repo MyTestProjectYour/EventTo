@@ -1,25 +1,44 @@
 package com.main;
 
+import java.util.HashMap;
+import java.util.Map;
 import com.execute.RunEvent;
 import com.execute.RunThread;
 import com.execute.RunTimer; 
 import com.interfaces.EventToRun; 
 public class EventTo {
-	private static EventTo eventTo = null;
+	private static Map<String, EventTo> mapEventTo = null; 
 	private RunThread runThread = null; 
 	private RunTimer runTimer = null;
 	private RunEvent runEvent = null;
+	private final static String DEFINE_BUILD_NAME = "MainBuild";
 	/**
 	 * 实例化事件，注意这是单列的！
 	 * @return EventTo this
 	 */
 	public static EventTo build() {
-		if(eventTo == null) {
-			eventTo = new EventTo();
-		}
+		EventTo eventTo = build(DEFINE_BUILD_NAME);
 		return eventTo;
 	}
-	public EventTo() {
+	/**
+	 * 构建一个新的单列，通过你输入的名字构建
+	 * @param name 单列名字
+	 * @return
+	 */
+	public static EventTo build(String name) {
+		if(mapEventTo == null) {
+			mapEventTo = new HashMap<String, EventTo>();
+		}
+		EventTo eventTo = mapEventTo.get(name);
+		if(eventTo != null) {
+			return eventTo;
+		}
+		eventTo = new EventTo();
+		mapEventTo.put(name, eventTo);
+		return eventTo;
+	}
+	
+	private EventTo() {
 		runThread = new RunThread();
 		runThread.start();
 		runTimer = new RunTimer();
@@ -131,12 +150,21 @@ public class EventTo {
 	}
 	
 	/**
-	 * 销毁所有的数据和自己
+	 * 销毁默认的单列
 	 */
 	public void destroyEventTo() {
-		runThread.closeThread();
-		runTimer.closeTimer();
-		runEvent.closeEvent();
-		eventTo = null;
+		destroyEventTo(DEFINE_BUILD_NAME);
+	}
+	/**
+	 * 销毁一个单列，通过名字
+	 * @param name
+	 */
+	public void destroyEventTo(String name) {
+		EventTo eventTo = build(name);
+		eventTo.runThread.closeThread();
+		eventTo.runTimer.closeTimer();
+		eventTo.runEvent.closeEvent();
+		mapEventTo.remove(name);
+		runEvent = null;
 	}
 }
